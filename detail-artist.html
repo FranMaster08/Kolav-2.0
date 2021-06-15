@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="stylesheet" href="./CSS/detail-artist.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <title>Kolav</title>
@@ -20,20 +21,34 @@
         <li><a href="genres.html">GENRES</a></li>
         <li><a href="detail-album.html">ALBUMS</a></li>
       </ul>
-     <div class="Busqueda">
-      <form class="Busqueda" action="search-results.html" method=get>
-        <button id="EjecutarBusqueda" class="buscadorBoton" type="submit"><i class="fas fa-search"></i></button>
-        <input class="buscadorFondo" type="text" placeholder="Busca tu Artista " >
-        </form> 
-     </div>
-     <div class="menubars" id="menucono">
-      <i id="menucono" class="fas fa-bars"></i>
+      <div class="Busqueda">
+        <form class="Busqueda" action="search-results.html" method=get>
+          <button id="EjecutarBusqueda" class="buscadorBoton" type="submit"><i class="fas fa-search"></i></button>
+          <input class="buscadorFondo" type="text" placeholder="Busca tu Artista ">
+        </form>
+      </div>
+      <div class="menubars" id="menucono">
+        <i id="menucono" class="fas fa-bars"></i>
+      </div>
     </div>
-  </div>  
   </header>
 
 
   <main>
+    <div class="container-details">
+      <div class="card-Artist">
+        <img   style="width:100%">
+        <div class="container-Artist">
+          <h4 class="Subtitle-detail"><b></b></h4>
+        </div>
+      </div>
+      <div class="info">
+        <h2 class='Subtitle'>Playlist</h2>
+        <div id="topTracks">
+
+        </div>
+      </div>
+
 
   </main>
   <footer class="footer">
@@ -53,4 +68,5 @@
   </footer>
   <script src="./JS/detail-artist.js"></script>
 </body>
+
 </html>
