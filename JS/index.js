@@ -19,7 +19,6 @@ window.addEventListener('load', function () {
     RealizarPeticion(topArtistUrl, 'TopArtist', createTopArtists);
     RealizarPeticion(topAlbumnUrl, 'TopAlbums', createTopAlbums);
 
-
   }
 
   function createTopTracks(track) {
@@ -60,17 +59,27 @@ window.addEventListener('load', function () {
       //${icon}
       const article = document.createElement('article');
       article.className = 'card';
-      article.innerHTML = `<div class="avatar" style="background-image: url(${image})"></div>
+      article.innerHTML = `
+        <div class="avatar" style="background-image: url(${image})"></div>
+        
         <div class="informacion">
           <h1>${artistName}</h1>
           <h2 id=infoalbum>
-            Posición ${position}</h2>
+            Posición ${position}
+           </h2>
            <button name='artista' value='./detail-artist.html?id=${id}' class="btn">Ver más</a>
+           <button  value='${id}' class="btn favoritos"><i class="fas fa-heart"></a>
         </div>
-
         `;
       document.getElementById('topArtists').appendChild(article);
+      
     }
+
+    let botones=document.querySelectorAll('.favoritos')
+    for (let i = 0; i < botones.length; i++){
+      botones[i].addEventListener('click', AgregarFavoritos)
+    }
+
 
   }
 
@@ -119,11 +128,26 @@ window.addEventListener('load', function () {
   }
 
 
+  function AgregarFavoritos(id) {
+     let ids= localStorage.getItem('favoritos')
+     if(!ids) {
+        localStorage.setItem('favoritos',id.target.value)
+     }else{
+       ids+=','+id.target.value
+       localStorage.setItem('favoritos',ids)
+     }
+  }
+
   loadApis();
 
+
+
   document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('btn'))
+    if (e.target.classList.contains('btn') && !e.target.classList.contains('favoritos')){
       location.href = e.target.value
+    }
+
+
   })
 
 
