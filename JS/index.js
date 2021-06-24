@@ -1,32 +1,24 @@
 
-window.addEventListener('load', async function () {
+window.addEventListener('load', function () {
   let topTracksUrl = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks';
   let topArtistUrl = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/artists';
   let topAlbumnUrl = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/albums';
 
-  let topTrackslocal = 'js/topTrack.json';
-  let topArtistlocal = 'js/topArtist.json';
-  let topAlbumnlocal = 'js/topAlbum.json';
 
-  async function RealizarPeticion(url, mensajeError) {
-    try {
-      let response = await fetch(url)
-      let respuesta = await response.json()
-      return respuesta
-    } catch (error) {
-      console.log(`Ocurrio un error en ${mensajeError}, ${error}`);
-    }
+  function RealizarPeticion(url, mensajeError, callback) {
+    fetch(url)
+      .then(res => res.json())
+      .then(res => callback(res))
+      .catch(error => console.log('error', mensajeError))
+
   }
 
-  async function loadApis() {
+  function loadApis() {
 
-    let topTracks = await RealizarPeticion(topTracksUrl, 'TopTracks');
-    let topArtists = await RealizarPeticion(topArtistUrl, 'TopArtist');
-    let topAlbums = await RealizarPeticion(topAlbumnUrl, 'TopAlbums');
+    RealizarPeticion(topTracksUrl, 'TopTracks', createTopTracks);
+    RealizarPeticion(topArtistUrl, 'TopArtist', createTopArtists);
+    RealizarPeticion(topAlbumnUrl, 'TopAlbums', createTopAlbums);
 
-    createTopTracks(topTracks);
-    createTopArtists(topArtists);
-    createTopAlbums(topAlbums);
 
   }
 
@@ -57,6 +49,7 @@ window.addEventListener('load', async function () {
 
 
   function createTopArtists(data) {
+
     for (let i = 0; i < data.data.length; i++) {
       let id = data.data[i].id
       //let title = data.data[i].picture;
@@ -126,11 +119,11 @@ window.addEventListener('load', async function () {
   }
 
 
-  await loadApis();
+  loadApis();
 
   document.addEventListener('click', (e) => {
     if (e.target.classList.contains('btn'))
-          location.href = e.target.value
+      location.href = e.target.value
   })
 
 
