@@ -4,116 +4,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <title>Kolav</title>
 </head>
 
 <body>
-  <header> <!-- Header -->
+  <!-- Header -->
+  <header>
     <div class="navbar">
-      <img class="logo" src="../img/KOLAV-LOGO.png" alt="">
-      <ul class="menu" id="menu">
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="detail-artist.html">ARTISTS</a></li>
-        <li><a href="genres.html">GENRES</a></li>
-        <li><a href="detail-album.html">ALBUMS</a></li>
+      <img class="logo" src="img/KOLAV-LOGO.png" alt="">
+
+      <div class="menubars" id="menubar"></div>
+      <ul class="menu" id="mostrarMenu">
+        <li><a href="./index.html">HOME</a></li>
+        <li><a href="./detail-artist.html">ARTISTS</a></li>
+        <li><a href="./genres.html">GENRES</a></li>
+        <li><a href="./detail-album.html">ALBUMS</a></li>
       </ul>
+
       <div class="Busqueda">
-      <form class="Busqueda" action="search-results.html" method=get>
-        <button class="buscadorBoton"><i class="fas fa-search"></i></button>
-        <input class="buscadorFondo" type="text" placeholder="Busca tu Artista " > 
-      </form> 
+        <form class="Busqueda" action="search-results.html" method=get>
+          <button class="buscadorBoton"><i class="fas fa-search"></i></button>
+          <input class="buscadorFondo" type="text" placeholder="Busca tu Artista ">
+        </form>
       </div>
-      <div class="menubars" id="menucono">
-      <i class="fas fa-bars"></i>
-      </div>
+      <div class="menucono"></div>
+      <i id="menucono" class="fas fa-bars"></i>
     </div>
   </header>
 
-  <main> <!-- Main -->
+
+  <main>
+    <!-- Main -->
     <h3 class="Subtitle">
       <i class="fas fa-music"></i> Genres
     </h3>
     <section class="MainContentGenre">
-    <article>
-    <div>
-      <div class="card">
-        <div class="avatar" style="background-image: url('../img/rock.jpeg')"></div>
-        <div>
-          <h1>Rock</h1>
-          <form method="get" action="detail-genres.html">
-            <button class="btn" type="submit">Ver más</button>
-          </form>
-        </div>
-      </div>
-    </div>
-    </article>
-
-    <article>
-      <div class="card">
-        <div class="avatar" style="background-image: url('../img/rock-nacional.jpeg')"></div>
-        <div>
-          <h1>Rock nacional</h1>
-          <form method="get" action="detail-genres.html">
-            <button class="btn" type="submit">Ver más</button>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="card">
-        <div class="avatar" style="background-image: url('../img/reaggeton.jpeg')"></div>
-        <div>
-          <h1>Reaggeton</h1>
-          <form method="get" action="detail-genres.html">
-            <button class="btn" type="submit">Ver más</button>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="card">
-        <div class="avatar" style="background-image: url('../img/pop.jpeg')"></div>
-        <div>
-          <h1>Pop</h1>
-          <form method="get" action="detail-genres.html">
-            <button class="btn" type="submit">Ver más</button>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="card">
-        <div class="avatar" style="background-image: url('../img/trap.jpeg')"></div>
-        <div>
-          <h1>Trap</h1>
-          <form method="get" action="detail-genres.html">
-            <button class="btn" type="submit">Ver más</button>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="card">
-        <div class="avatar" style="background-image: url('../img/electropop.jpeg')"></div>
-        <div>
-          <h1>Electropop</h1>
-          <form method="get" action="detail-genres.html">
-            <button class="btn" type="submit">Ver más</button>
-        </div>
-      </div>
-    </article>
-
     </section>
   </main>
-  <footer class="footer"> <!-- Footer -->
+  <footer class="footer">
+    <!-- Footer -->
     <div class="socialNet">
-      <i class="fab fa-facebook" ></i>
-      <i class="fab fa-instagram" ></i>
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-instagram"></i>
       <i class="fab fa-twitter"></i>
-      <i class="fab fa-whatsapp" ></i>
+      <i class="fab fa-whatsapp"></i>
     </div>
     <div class="members">
       <ul>
@@ -126,4 +63,5 @@
   </footer>
   <script src="./JS/genres.js"></script>
 </body>
+
 </html>

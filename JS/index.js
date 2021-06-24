@@ -72,7 +72,7 @@ window.addEventListener('load', async function () {
           <h1>${artistName}</h1>
           <h2 id=infoalbum>
             Posición ${position}</h2>
-           <button name='artista' value='./detail-artist.html?Id=${id}' class="btn">Ver más</a>
+           <button name='artista' value='./detail-artist.html?id=${id}' class="btn">Ver más</a>
         </div>
 
         `;
